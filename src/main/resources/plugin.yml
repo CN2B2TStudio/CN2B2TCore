@@ -1,0 +1,19 @@
+name: CN2B2TStudio
+version: 0.1.0
+main: studio.cn2b2t.core.Main
+authors: [ jiyun233 ]
+depend:
+  - ProtocolLib
+  - PacketWrapper
+description: DingTalk NMSL CNM
+commands:
+  kill:
+    description: suicide
+    aliases:
+      - suicide
+      - kys
+      - 514
+  gamemode:
+    description: change gamemode
+    aliases:
+      - gm

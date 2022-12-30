@@ -1,0 +1,29 @@
+#插件前缀
+PluginPrefix: '&9[&b&lCN2B2T&c&lStudio&9]'
+
+ChatCoolDown:
+  ChatLimit: true
+  LimitTime: 3 #second
+  NotifyMessage: "&c聊天冷却中..."
+
+WindowClickCheck:
+  check: true
+  count: 20
+
+PacketFlyCheck:
+  ClassicCheck: true
+  NewStrictCheck: true
+
+#水晶限速 depend: ProtocolLib
+CrystalSpeedLimit:
+  limit: true
+  BreakDelay: 30 #millisecond
+
+Dupes:
+  ShulkerDupe:
+    enable: true
+    count: 10
+  DoubleDonkey:
+    enable: true
+  SuperChicken:
+    enable: true
