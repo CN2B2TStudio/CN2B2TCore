@@ -1,5 +1,5 @@
 #插件前缀
-PluginPrefix: '&9[&b&lCN2B2T&c&lStudio&9]'
+PluginPrefix: '&9[&b&lCN2B2T&c&lCore&9]'
 
 ChatCoolDown:
   ChatLimit: true
