@@ -17,7 +17,7 @@ PacketFlyCheck:
 #水晶限速 depend: ProtocolLib
 CrystalSpeedLimit:
   limit: true
-  BreakDelay: 30 #millisecond
+  BreakDelay: 30 #millisecond 尽量不要太高
 
 Dupes:
   ShulkerDupe:
