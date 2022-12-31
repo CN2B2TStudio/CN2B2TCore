@@ -10,7 +10,7 @@ WindowClickCheck:
   check: true
   count: 20
 
-PacketFlyCheck:
+PacketFlyCheck:      # 反作弊 检测packetfly
   ClassicCheck: true
   NewStrictCheck: true
 
@@ -20,10 +20,10 @@ CrystalSpeedLimit:
   BreakDelay: 30 #millisecond 尽量不要太高
 
 Dupes:
-  ShulkerDupe:
+  ShulkerDupe:  #↓ 启用潜影盒免费刷物品，表示10+1，暂未实现
     enable: true
     count: 10
-  DoubleDonkey:
+  DoubleDonkey:   #↓ 启用驴刷，暂未实现
     enable: true
-  SuperChicken:
+  SuperChicken:   #↓ 启用鸡刷，暂未实现
     enable: true
