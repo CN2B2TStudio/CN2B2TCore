@@ -16,16 +16,7 @@ object CrystalSpeedLimit : Listener {
     @EventHandler
     fun onHittingCrystal(event: EntityDamageByEntityEvent) {
         if (!studio.cn2b2t.core.Main.instance.config.getBoolean("CrystalSpeedLimit.limit") || event.damager !is Player || event.entity !is EnderCrystal || event.isCancelled) return
-        val player = event.damager as Player
-        if (breakDelay.containsKey(player)) {
-            if (!breakDelay[player]!!.passedMs(studio.cn2b2t.core.Main.instance.config.getLong("CrystalSpeedLimit.BreakDelay"))) {
-                event.isCancelled = true
-            } else {
-                breakDelay[player]!!.reset()
-            }
-        } else {
-            breakDelay[player] = null
-        }
+        // protect
     }
 
     @EventHandler
