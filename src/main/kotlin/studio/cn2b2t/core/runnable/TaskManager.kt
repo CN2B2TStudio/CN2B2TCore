@@ -13,14 +13,7 @@ class TaskManager(main: Main) {
     }
 
     private fun registerRunnable(task: TaskRunnable) {
-        if (!runnable.contains(task)){
-            runnable.add(task)
-            if (task.isAsynchronously){
-                Bukkit.getScheduler().runTaskTimerAsynchronously(main,task,task.delay,task.pri)
-            }else{
-                Bukkit.getScheduler().runTaskTimer(main,task,task.delay,task.pri)
-            }
-        }
+        // Protected Code by DrRockyMC's CodeTool
     }
 
 }
