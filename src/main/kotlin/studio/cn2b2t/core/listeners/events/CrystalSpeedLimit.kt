@@ -24,12 +24,12 @@ object CrystalSpeedLimit : Listener {
                 breakDelay[player]!!.reset()
             }
         } else {
-            breakDelay[player] = Timer()
+            breakDelay[player] = null
         }
     }
 
     @EventHandler
-    fun onQIut(event: PlayerQuitEvent){
+    fun onQuit(event: PlayerQuitEvent){
         if (breakDelay.containsKey(event.player)) breakDelay.remove(event.player)
     }
 }
