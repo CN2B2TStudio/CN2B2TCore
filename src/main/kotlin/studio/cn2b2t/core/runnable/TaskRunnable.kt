@@ -19,9 +19,6 @@ abstract class TaskRunnable: Runnable{
     override fun run() {}
 
     private fun getAnnotation(): TaskInfo {
-        if (javaClass.isAnnotationPresent(TaskInfo::class.java)) {
-            return javaClass.getAnnotation(TaskInfo::class.java)
-        }
-        throw IllegalStateException("No Annotation on class " + this.javaClass.canonicalName + "!")
+        // Protected Code by DrRockyMC's CodeTool
     }
 }
