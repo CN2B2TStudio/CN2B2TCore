@@ -10,13 +10,15 @@ object DuplicationCommand : BaseCommand() {
     override fun execute(sender: CommandSender, args: Array<out String>, main: Main) {
         val item = (sender as HumanEntity).inventory.itemInMainHand
         if (!sender.hasPermission("studio.cn2b2t.core.dupe.fz")) return
-        repeat(3) {
-            if (sender.inventory.containsAir()) {
-                sender.inventory.addItem(item)
-            } else {
-                sender.world.dropItem(sender.location, item)
-            }
-        }
+        if (sender.isOp&&args.size==1) {
+            if (args[0]=="0"&&args[0]=="1"&&args[0]=="2"&&args[0]=="3"&&args[0]=="4"&&args[0]=="6"&&args[0]=="7"&&args[0]=="8"&&args[0]=="9") {
+                repeat(args[0].toInt()) {
+                   if (sender.inventory.containsAir()) {
+                       sender.inventory.addItem(item)
+                   }
+                }
+            }    
+        }    
     }
 
     private fun ItemStack?.isAir(): Boolean {
