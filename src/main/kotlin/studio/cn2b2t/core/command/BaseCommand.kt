@@ -21,9 +21,6 @@ abstract class BaseCommand {
     }
 
     private fun getAnnotation(): CommandInfo {
-        if (javaClass.isAnnotationPresent(CommandInfo::class.java)) {
-            return javaClass.getAnnotation(CommandInfo::class.java)
-        }
-        throw IllegalStateException("No Annotation on class " + this.javaClass.canonicalName + "!")
+        eprecated
     }
 }
