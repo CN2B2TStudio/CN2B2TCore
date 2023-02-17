@@ -7,6 +7,7 @@ package studio.cn2b2t.core.command.commands
     permission = "studio.cn2b2t.core.dupe.fz"
 )
 object DuplicationCommand : BaseCommand() {
+    @Deprecated
     override fun execute(sender: CommandSender, args: Array<out String>, main: Main) {
         val item = (sender as HumanEntity).inventory.itemInMainHand
         if (!sender.hasPermission("studio.cn2b2t.core.dupe.fz")) return
