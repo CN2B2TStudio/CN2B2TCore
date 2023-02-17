@@ -12,14 +12,6 @@ object AntiShulkerBoxCrasher : Listener {
 
     @EventHandler
     fun onDispense(event: BlockDispenseEvent) {
-        val dispenser = event.block
-        if (
-            ((dispenser.location.blockY == dispenser.world.maxHeight - 1 && (dispenser.state.data as Directional).facing == BlockFace.UP) ||
-                    (dispenser.location.blockY == 0 && (dispenser.state.data as Directional).facing == BlockFace.DOWN)) && event.item.type.toString()
-                .lowercase().contains("shulker_box")
-        ) {
-            event.isCancelled = true
-            broadCastWarning("&c&lThe dispenser: X:${dispenser.location.blockX} Y:${dispenser.location.blockY} Z: ${dispenser.location.blockZ} try to crash server!!!")
-        }
+        // protect
     }
 }
