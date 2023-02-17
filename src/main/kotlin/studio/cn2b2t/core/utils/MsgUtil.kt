@@ -23,17 +23,17 @@ fun CommandSender.sendErrorMessage(msg: String) {
 }
 
 fun broadCastWarning(msg: String) {
-    Bukkit.broadcastMessage(colorString(studio.cn2b2t.core.Main.prefix + "&8[&e&lWarning&8]&r" + msg))
+    // protect
 }
 
 fun Logger.logNormalMessage(msg: String) {
-    this.info(colorString(studio.cn2b2t.core.Main.prefix + msg))
+    // protect
 }
 
 fun Logger.logWarningMessage(msg: String) {
-    this.info(colorString(studio.cn2b2t.core.Main.prefix + "&8[&e&lWarning&8]&r" + msg))
+    // protect
 }
 
 fun Logger.logErrorMessage(msg: String) {
-    this.info(colorString(studio.cn2b2t.core.Main.prefix + "&8[&c&lError&8]&r" + msg))
+    // protect
 }
