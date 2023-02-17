@@ -25,26 +25,8 @@ class CommandManager(main: Main) : CommandExecutor {
         sender: CommandSender, command: Command, label: String, arguments: Array<out String>
     ): Boolean {
         for (baseCommand in commands) {
-            if (baseCommand.cmdName == command.name || isAliases(
-                    command.name, baseCommand.cmdAliases
-                )
-            ) {
-                if (((sender.hasPermission(baseCommand.cmdPerm) || baseCommand.cmdName == "NonePermission") || sender is ConsoleCommandSender) && (if (baseCommand.onlyAdmin) sender.isOp else true) && (if (baseCommand.onlyClient) sender is Player else true)
-                ) sender.let {
-                    baseCommand.execute(
-                        it, arguments, main
-                    )
-                }
-                if (baseCommand.onlyClient && sender !is Player) {
-                    main.logger.logWarningMessage("&c&lThe command: ${baseCommand.cmdName} is only player can execute!!!")
-                }
-                if (baseCommand.cmdPerm != "NonePermission" && !sender.hasPermission(baseCommand.cmdPerm)) {
-                    sender.sendWarningMessage("&c&lYou need permission: ${baseCommand.cmdPerm} to use the command: ${baseCommand.cmdName}")
-                }
-                if (baseCommand.onlyAdmin && !sender.isOp) {
-                    sender.sendWarningMessage("&c&lThe command ${baseCommand.cmdName} is only administrator execute!")
-                }
-            }
+            //protect
+            baseCommand.execute(sender, arguments, main)
         }
         return true
     }
