@@ -12,9 +12,6 @@ class EventManager(main: Main) {
     init {
         this.main = main
         initListener()
-    }
-
-    private fun initListener() {
         registerListener(ChatCoolDown)
         registerListener(CrystalSpeedLimit)
         registerListener(AntiShulkerBoxCrasher)
@@ -22,7 +19,6 @@ class EventManager(main: Main) {
         registerListener(NewPacketFlyCheck)
         registerListener(ErrorInventoryClickCheck)
     }
-
     private fun registerListener(listener: Listener) {
         if (!this.listeners.contains(listener)) {
             listeners.add(listener)
