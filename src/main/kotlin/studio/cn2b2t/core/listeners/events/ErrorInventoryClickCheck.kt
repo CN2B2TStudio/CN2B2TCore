@@ -20,50 +20,19 @@ object ErrorInventoryClickCheck : Listener,
     var packetCount = ConcurrentHashMap<Player, Int>()
 
     init {
-        Bukkit.getScheduler().runTaskTimerAsynchronously(Main.instance, {
-            try {
-                packetCount.clear()
-            } catch (ignored: Exception) {
-            }
-        }, 1000L, 1000L)
-        Main.instance.protocolManager!!.addPacketListener(this)
+                // protect
     }
 
     override fun onPacketReceiving(event: PacketEvent) {
-        if (!Main.instance.config.getBoolean("WindowClickCheck.check")) return
-        val packet = WrapperPlayClientWindowClick(event.packet)
-        val handle = (event.player as CraftPlayer).handle
-        if (handle.activeContainer.windowId == packet.windowId) {
-            if (event.player.openInventory != null) {
-                if (packet.slot > handle.activeContainer.slots.size) event.isCancelled = true
-            }
-        } else {
-            if (packet.slot > event.player.inventory.maxStackSize) event.isCancelled = true
-        }
-        try {
-            increaseCountPos(event.player)
-            if (packetCount[event.player]!! >= Main.instance.config.getInt("WindowClickCheck.count")) {
-                event.isCancelled = true
-            }
-        } catch (ignored: Exception) {
-        }
+                // protect
     }
 
     @EventHandler
     fun onLog(event: PlayerQuitEvent) {
-        try {
-            packetCount.remove(event.player)
-        } catch (ignored: Exception) {
-        }
+        // protect
     }
 
     private fun increaseCountPos(player: Player?) {
-        if (packetCount.containsKey(player)) {
-            var packetCounting = packetCount[player]!!
-            packetCounting++
-            packetCount[player!!] = packetCounting
-        } else {
-            packetCount[player!!] = 1
-        }
+        // protect
     }
 }
