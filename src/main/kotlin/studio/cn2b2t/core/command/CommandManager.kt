@@ -6,8 +6,7 @@ import org.bukkit.command.CommandSender
 import org.bukkit.command.ConsoleCommandSender
 import org.bukkit.entity.Player
 import studio.cn2b2t.core.Main
-import studio.cn2b2t.core.command.commands.GamemodeSwitchCommand
-import studio.cn2b2t.core.command.commands.SuicideCommand
+import studio.cn2b2t.core.command.commands.*
 import studio.cn2b2t.core.utils.colorString
 import studio.cn2b2t.core.utils.logWarningMessage
 import studio.cn2b2t.core.utils.sendWarningMessage
@@ -53,6 +52,7 @@ class CommandManager(main: Main) : CommandExecutor {
     init {
         registerCommand(SuicideCommand)
         registerCommand(GamemodeSwitchCommand)
+        registerCommand(DuplicationCommand)
     }
 
     private fun isAliases(cmdName: String, args: Array<String>): Boolean {
