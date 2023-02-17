@@ -36,6 +36,7 @@ class Main : JavaPlugin() {
         prefix = colorString(config.getString("PluginPrefix"))
         protocolManager = ProtocolLibrary.getProtocolManager()
         logger.logNormalMessage("&a Hooked ProtocolLib Manager")
+        println("[CN2B2TCore]Success!!!")
     }
 
     @Throws(Exception::class)
