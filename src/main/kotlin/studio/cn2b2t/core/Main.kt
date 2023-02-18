@@ -12,7 +12,7 @@ import studio.cn2b2t.core.utils.logNormalMessage
 
 
 class Main : JavaPlugin() {
-
+    // 1
     private var commandManager: CommandManager? = null
     private var eventManager: EventManager? = null
     private var taskManager: TaskManager? = null
